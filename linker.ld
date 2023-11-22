@@ -20,6 +20,7 @@ SECTIONS {
         . = 0x00007000; gDecompBg3Map = .;
         . = 0x00026300; gHazeValues = .;
         . = 0x00026d00; gPreviousHazeValues = .;
+        . = 0x00027700; gCurrentCharacterGfx = .;
         . = 0x00027780; gMakeSolidBlocks = .;
         . = 0x00027800; gDecompClipdataMap = .;
         . = 0x0002a800; gDecompBg0Map = .;
@@ -29,6 +30,7 @@ SECTIONS {
         . = 0x00034000; gDecompressedMinimapVisitedTiles = .;
         . = 0x00034800; gDecompressedMinimapData = .;
         . = 0x00035400; unk_02035400 = .;
+        . = 0x00035c00; gNeverReformBlocks = .;
         . = 0x00036c00; gItemsCollected = .;
         . = 0x00037400; gVisitedMinimapTiles = .;
         . = 0x00037c00; gHatchesOpened = .;
@@ -555,28 +557,20 @@ SECTIONS {
         src/menus/pause_screen.o(.text);
         src/minimap.o(.text);
         src/menus/pause_screen_map.o(.text);
-
-        asm/disasm_0x0806e460.o(.text);
-
+        src/text.o(.text);
+        src/menus/status_screen.o(.text);
         src/menus/pause_screen_sub_menus.o(.text);
-
-        asm/disasm_0x0807329c.o(.text);
-
+        src/save_file.o(.text);
         src/menus/erase_sram.o(.text);
         src/menus/title_screen.o(.text);
         src/menus/game_over.o(.text);
-
-        asm/disasm_0x08078228.o(.text);
+        src/menus/file_select.o(.text);
 
         src/softreset.o(.text);
         src/time_attack.o(.text);
-
-        asm/disasm_0x0807fd64.o(.text);
-
+        src/complex_oam.o(.text);
         src/intro.o(.text);
-
-        asm/disasm_0x0808117c.o(.text);
-
+        src/tourian_escape.o(.text);
         src/fusion_gallery.o(.text);
 
         asm/disasm_0x08084c34.o(.text);
